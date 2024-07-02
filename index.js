@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 // Route to call third-party API
 app.use("*", async (req, res) => {
   try {
-    const url = `https://dev-api.paid.com:4903${req.originalUrl}`;
+    const url = `127.0.0.1:4903${req.originalUrl}`;
     const response = await fetch(url, {
       method: req.method,
       ...(req?.method !== "GET" && { body: JSON.stringify(req.body) }),
